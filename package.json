@@ -1,0 +1,30 @@
+{
+  "name": "cimf-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "koa": "^1.1.2",
+    "koa-views": "^4.0.1",
+    "nunjucks": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
+    "babel-preset-es2015-node5": "^1.1.2",
+    "bluebird": "^3.1.1",
+    "browser-sync": "^2.11.1",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.8.1"
+  },
+  "scripts": {
+    "reset": "rm -rf public _source-node5 && mkdir public _source-node5",
+    "build:css": "node-sass --output-style expanded -o public source/client/css/style.scss",
+    "build:server": "babel source -d _source-node5 --presets es2015-node5 -s",
+    "predev": "npm run reset && npm run build:css",
+    "dev": "npm run build:css -- -w & npm run build:server -- -w & nodemon -w _source-node5 -C _source-node5/server/index.js"
+  }
+}
