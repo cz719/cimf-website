@@ -1,17 +1,19 @@
 import { join } from 'path';
 import koa from 'koa';
-import views from 'koa-views';
+import koaViews from 'koa-views';
+import koaStatic from 'koa-static';
+import routes from './routes';
 
 const app = koa();
 
-app.use(views(join(__dirname, '../../template'), {
+app.use(koaViews(join(__dirname, '../../template'), {
   map: {
     html: 'nunjucks'
   }
 }));
 
-app.use(function *(next) {
-  yield this.render('index.html');
-});
+app.use(koaStatic(join(__dirname, '../../public')));
+
+app.use(routes);
 
 app.listen(10000);
