@@ -10,7 +10,8 @@
     "koa-router": "^5.3.0",
     "koa-static": "^2.0.0",
     "koa-views": "^4.0.1",
-    "nunjucks": "^2.3.0"
+    "nunjucks": "^2.3.0",
+    "source-map-support": "^0.4.0"
   },
   "devDependencies": {
     "babel": "^6.3.26",
@@ -27,6 +28,6 @@
     "build:css": "node-sass --output-style expanded -o public source/client/css/style.scss",
     "build:server": "babel source -d _source-node5 --presets es2015-node5 -s",
     "predev": "npm run reset && npm run build:css",
-    "dev": "npm run build:css -- -w & npm run build:server -- -w & nodemon -w _source-node5 -C _source-node5/server/index.js"
+    "dev": "npm run build:css -- -w & npm run build:server -- -w & nodemon -w _source-node5 -C _source-node5/server/index.js & browser-sync start --config bs-config.js"
   }
 }
