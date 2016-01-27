@@ -28,12 +28,12 @@
     "nodemon": "^1.8.1"
   },
   "scripts": {
-    "postinstall": "npm run reset && npm run build:css && npm run build:server",
     "reset": "rm -rf public _source-node5 && mkdir public _source-node5",
     "build:css": "node-sass --output-style expanded -o public source/client/css/style.scss",
     "build:server": "babel source -d _source-node5 --presets es2015-node5 -s",
     "predev": "npm run reset && npm run build:css",
     "dev": "npm run build:css -- -w & npm run build:server -- -w & nodemon -w _source-node5 -C _source-node5/server/index.js & browser-sync start --config bs-config.js",
+    "postinstall": "npm run reset && npm run build:css && npm run build:server",
     "start": "node _source-node5/server/index.js"
   }
 }
