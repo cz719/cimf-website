@@ -25,4 +25,4 @@ app.use(koaStatic(join(__dirname, '../../source/client')));
 
 app.use(routes);
 
-app.listen(10000, () => console.log('listen on 10000'));
+app.listen(process.env.PORT || 10000, () => console.log('listen on 10000'));
