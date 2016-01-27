@@ -1,0 +1,34 @@
+/* Larger than mobile */
+@mixin respond-to-larger-than-mobile {
+  @media (min-width: 400px) {
+    @content;
+  }
+}
+
+/* Larger than phablet */
+@mixin respond-to-larger-than-phablet {
+  @media (min-width: 550px) {
+    @content;
+  }
+}
+
+/* Larger than tablet */
+@mixin respond-to-larger-than-tablet {
+  @media (min-width: 750px) {
+    @content;
+  }
+}
+
+/* Larger than desktop */
+@mixin respond-to-larger-than-desktop {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+/* Larger than Desktop HD */
+@mixin respond-to-larger-than-desktop-hd {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

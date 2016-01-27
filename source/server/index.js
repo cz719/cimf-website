@@ -21,6 +21,7 @@ app.use(koaViews(join(__dirname, '../../template'), {
 }));
 
 app.use(koaStatic(join(__dirname, '../../public')));
+app.use(koaStatic(join(__dirname, '../../source/client')));
 
 app.use(routes);
 

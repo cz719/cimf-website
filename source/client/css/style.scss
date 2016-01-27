@@ -1,6 +1,11 @@
+@import 'config/z-index';
+@import 'config/responsive';
+
 @import 'base/normalize';
 @import 'base/skeleton';
 @import 'base/main';
 @import 'base/atom';
 
 @import 'organism/nav';
+@import 'organism/header';
+@import 'organism/article';
