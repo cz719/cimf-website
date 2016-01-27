@@ -7,10 +7,17 @@ import routes from './routes';
 
 const app = koa();
 
-app.use(koaViews(join(__dirname, '../../template'), {
-  map: {
-    html: 'nunjucks'
+app.use(function *(next) {
+  try {
+    yield next;
+  } catch (err) {
+    console.error(err.stack);
+    this.status = 500;
   }
+});
+
+app.use(koaViews(join(__dirname, '../../template'), {
+  extension: 'ejs'
 }));
 
 app.use(koaStatic(join(__dirname, '../../public')));

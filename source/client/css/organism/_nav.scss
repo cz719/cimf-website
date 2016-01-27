@@ -1,0 +1,49 @@
+.nav {
+  position: relative;
+  height: 0;
+  color: white;
+  svg {
+    fill: white;
+  }
+}
+
+.nav__top {
+  background-color: black;
+  height: 44px;
+}
+
+.nav__home {
+  float: left;
+  display: block;
+  padding: (44px - 24px) / 2;
+  height: 44px;
+}
+
+.nav__logo {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+}
+
+.nav__hamburger {
+  border: none;
+  padding: (44px - 24px) / 2;
+  height: 44px;
+  margin-bottom: 0;
+  float: right;
+}
+
+.nav__dropdown {
+  padding: 5px 0;
+  position: absolute;
+  background-color: black;
+  top: 44px;
+  width: 100%;
+}
+
+.nav__dropdown-item {
+  list-style: none;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 0;
+}
