@@ -76,6 +76,7 @@
   height: 0;
   overflow: hidden;
   background: black;
+  transition: height 300ms;
   @include respond-to-larger-than-tablet {
     display: none;
   }

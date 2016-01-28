@@ -1,11 +1,11 @@
 <nav class="nav">
   <div class="nav__top">
     <a href="/cn" class="nav__home"><% include ./svg/home.svg %></a>
-    <button class="nav__hamburger"><% include ./svg/hamburger.svg %></button>
+    <button id="js-show-dropdown" class="nav__hamburger"><% include ./svg/hamburger.svg %></button>
     <a href="/cn" class="nav__logo"><% include ./svg/logo-black.svg %></a>
   </div>
-  <div class="nav__dropdown-mask">
-    <ul class="nav__dropdown">
+  <div class="nav__dropdown-mask" id="js-dropdown-mask">
+    <ul class="nav__dropdown" id="js-dropdown">
       <li class="nav__dropdown-item"><a href="#">联系</a></li>
       <li class="nav__dropdown-item"><a href="#">发现</a></li>
       <li class="nav__dropdown-item"><a href="#">Switch to English</a></li>
