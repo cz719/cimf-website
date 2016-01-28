@@ -17,7 +17,6 @@
       isDropdownOpen = true;
       var dropdown = document.getElementById('js-dropdown');
       var computedStyle = getStyle(dropdown);
-      var marginTop = pxToNumber(computedStyle['margin-top']);
       var height = pxToNumber(computedStyle['height']);
       document.getElementById('js-dropdown-mask').style.height = height + 'px';
     } else {

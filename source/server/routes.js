@@ -15,7 +15,7 @@ cnRouter.get('/', function *(next) {
 });
 
 cnRouter.get('/content', function *(next) {
-  yield this.render('home');
+  yield this.render('content');
 });
 
 rootRouter.use('/cn', cnRouter.routes());
@@ -29,7 +29,7 @@ enRouter.get('/', function *(next) {
 });
 
 enRouter.get('/content', function *(next) {
-  yield this.render('home');
+  yield this.render('content');
 });
 
 rootRouter.use('/en', enRouter.routes());
