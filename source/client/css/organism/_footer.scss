@@ -1,0 +1,13 @@
+.footer {
+  @extend .container;
+}
+
+.footer__inner {
+  border-top: 1px solid #d6d6d6;
+  padding: 20px 0;
+  p {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
