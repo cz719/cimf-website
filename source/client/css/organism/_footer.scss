@@ -5,9 +5,12 @@
 .footer__inner {
   border-top: 1px solid #d6d6d6;
   padding: 20px 0;
+  text-align: center;
+  @include respond-to-larger-than-tablet {
+    text-align: left;
+  }
   p {
     margin-bottom: 0;
     font-size: 1.4rem;
-    text-align: center;
   }
 }
