@@ -4,6 +4,7 @@ import getLocals from './locals';
 const rootRouter = createRouter();
 
 rootRouter.get('/', function *(next) {
+  this.i18n.__('Hello');
   yield this.render('index');
 });
 
