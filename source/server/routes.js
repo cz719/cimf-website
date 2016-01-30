@@ -1,5 +1,12 @@
+import config from 'config';
+import { fromCallback } from 'bluebird';
+import mailgun from 'mailgun-js';
 import createRouter from 'koa-router';
 import getLocals from './locals';
+
+const contactFormReceive = config.get('mail.contactFormReceive');
+
+const mailer = mailgun(config.get('mailgun'));
 
 const rootRouter = createRouter();
 
@@ -7,8 +14,21 @@ rootRouter.get('/', function *(next) {
   yield this.render('index', {});
 });
 
-rootRouter.post('/submit-form', function () {
-  this.body = this.req.body;
+rootRouter.post('/submit-form', function *() {
+  const body = this.request.body;
+
+  const data = {
+    from: body.email,
+    to: contactFormReceive,
+    subject: `Contact Form Submit (from ${body.email})`,
+    text: body.message,
+  };
+
+  yield fromCallback((done) => {
+    mailer.messages().send(data, done);
+  });
+
+  this.redirect('back');
 });
 
 // Chinese

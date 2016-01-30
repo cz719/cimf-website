@@ -2,3 +2,4 @@
 .DS_Store
 /public
 /_source-node5
+/config/local*
