@@ -4,8 +4,7 @@ import getLocals from './locals';
 const rootRouter = createRouter();
 
 rootRouter.get('/', function *(next) {
-  this.i18n.__('Hello');
-  yield this.render('index');
+  yield this.render('index', {});
 });
 
 rootRouter.post('/submit-form', function () {
@@ -18,11 +17,11 @@ rootRouter.post('/submit-form', function () {
 const cnRouter = createRouter();
 
 cnRouter.get('/', function *(next) {
-  yield this.render('home');
+  yield this.render('home', {});
 });
 
 cnRouter.get('/contact', function *(next) {
-  yield this.render('contact');
+  yield this.render('contact', {});
 });
 
 cnRouter.get('/:page', function *(next) {
@@ -38,11 +37,11 @@ rootRouter.use('/cn', cnRouter.routes());
 const enRouter = createRouter();
 
 enRouter.get('/', function *(next) {
-  yield this.render('home');
+  yield this.render('home', {});
 });
 
 enRouter.get('/content', function *(next) {
-  yield this.render('content');
+  yield this.render('content', {});
 });
 
 rootRouter.use('/en', enRouter.routes());

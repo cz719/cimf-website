@@ -1,4 +1,5 @@
 import 'source-map-support/register';
+import './config';
 import { join } from 'path';
 import koa from 'koa';
 import koaViews from 'koa-views';
@@ -16,11 +17,21 @@ app.use(koai18n(app, {
   locales:['en', 'zh-CN'],
   directory: join(__dirname, '../../locales'),
   modes: [
-    'query',
-    'cookie',
-    'header',
+    'query', // ?locale=zh-CN
+    function () {
+      return /\/cn/i.test(this.url) ? 'zh-CN' : 'en';
+    },
   ],
 }));
+
+app.use(koaViews(join(__dirname, '../../template'), {
+  extension: 'ejs'
+}));
+
+app.use(function *(next) {
+  this.state = { i18n: this.i18n };
+  yield next;
+});
 
 app.use(function *(next) {
   try {
@@ -32,9 +43,6 @@ app.use(function *(next) {
 });
 
 app.use(koaBodyparser());
-app.use(koaViews(join(__dirname, '../../template'), {
-  extension: 'ejs'
-}));
 app.use(koaStatic(join(__dirname, '../../public')));
 app.use(koaStatic(join(__dirname, '../../source/client')));
 
