@@ -1,0 +1,23 @@
+<% include ./_head.ejs %>
+<% include ./_navbar.ejs %>
+
+<header class="header">
+  <div class="header__bg"></div>
+  <div class="header__content">
+    <div class="header__c-inner">
+      <h1 class="header__title">联系</h1>
+    </div>
+  </div>
+</header>
+
+<section class="content">
+  <form method="post" action="/submit-form">
+    <label for="email">你的邮箱</label>
+    <input class="u-full-width" type="email" placeholder="example@email.com" id="email" name="email">
+    <label for="message">留言信息</label>
+    <textarea class="u-full-width" placeholder="内容" id="message" name="message"></textarea>
+    <button class="button-primary" type="submit">提交</button>
+  </form>
+</section>
+
+<% include ./_foot.ejs %>
