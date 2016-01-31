@@ -13,13 +13,19 @@ const app = koa();
 
 koaLocale(app);
 
+// Provide convenience for links in template
+app.use(function *(next) {
+  this.basePath = /\/cn/i.test(this.url) ? 'cn' : 'en';
+  yield next;
+});
+
 app.use(koai18n(app, {
   locales:['en', 'zh-CN'],
   directory: join(__dirname, '../../locales'),
   modes: [
     'query', // ?locale=zh-CN
     function () {
-      return /\/cn/i.test(this.url) ? 'zh-CN' : 'en';
+      return this.basePath === 'cn' ? 'zh-CN' : 'en';
     },
   ],
 }));
@@ -29,7 +35,26 @@ app.use(koaViews(join(__dirname, '../../template'), {
 }));
 
 app.use(function *(next) {
-  this.state = { i18n: this.i18n };
+
+  const b = this.basePath;
+  const i18n = this.i18n;
+
+  const navigations = [
+    { href: `/${b}/faculty`, text: i18n.__('Faculty') },
+    { href: `/${b}/activity`, text: i18n.__('Activity') },
+    { href: `/${b}/competition`, text: i18n.__('Competition') },
+    { href: `/${b}/apply`, text: i18n.__('Apply') },
+    { href: `/${b}/cim`, text: i18n.__('CIM') },
+    { href: `/${b}/regulation`, text: i18n.__('Regulation') },
+    { href: `/${b}/contact`, text: i18n.__('Contact') },
+  ];
+
+  this.state = {
+    i18n: this.i18n,
+    basePath: this.basePath,
+    navigations,
+  };
+
   yield next;
 });
 

@@ -11,43 +11,21 @@ rootRouter.get('/', function *(next) {
 
 rootRouter.post('/submit-form', submitForm);
 
-function *contactHandler() {
-  yield this.render('contact', {});
-}
+const contentRouter = createRouter();
 
-// Chinese
-// ----------------------
-
-const cnRouter = createRouter();
-
-cnRouter.get('/', function *(next) {
+contentRouter.get('/', function *(next) {
   yield this.render('home', {});
 });
 
-cnRouter.get('/contact', contactHandler);
+contentRouter.get('/contact', function *() {
+  yield this.render('contact', {});
+});
 
-cnRouter.get('/:page', function *(next) {
+contentRouter.get('/:page', function *(next) {
   const locals = yield getLocals(this.params.page);
   yield this.render('content', locals);
 });
 
-rootRouter.use('/cn', cnRouter.routes());
-
-// English
-// ----------------------
-
-const enRouter = createRouter();
-
-enRouter.get('/', function *(next) {
-  yield this.render('home', {});
-});
-
-enRouter.get('/content', function *(next) {
-  yield this.render('contact', {});
-});
-
-enRouter.get('/contact', contactHandler);
-
-rootRouter.use('/en', enRouter.routes());
+rootRouter.use('/(cn|en)', contentRouter.routes());
 
 export default rootRouter.routes();

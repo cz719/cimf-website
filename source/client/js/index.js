@@ -17,10 +17,15 @@ function showDropdownClickHandler(event) {
 
   if (!isDropdownOpen) {
     isDropdownOpen = true;
+
     var dropdown = document.getElementById('js-dropdown');
     var computedStyle = getStyle(dropdown);
+
     var height = pxToNumber(computedStyle['height']);
-    document.getElementById('js-dropdown-mask').style.height = height + 'px';
+    var marginTop = pxToNumber(computedStyle['margin-top']);
+
+    document.getElementById('js-dropdown-mask').style.height = (height + marginTop) + 'px';
+
   } else {
     isDropdownOpen = false;
     document.getElementById('js-dropdown-mask').style.height = '';
