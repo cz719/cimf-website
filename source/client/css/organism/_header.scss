@@ -48,10 +48,6 @@
   }
 }
 
-.header__c-inner {
-  @extend .container;
-}
-
 .header__title {
   .header--home &,
   .header--welcome & {
@@ -63,8 +59,8 @@
 }
 
 .header__nav {
-  width: 250px;
-  margin: 50px auto 0;
+  width: 100%;
+  margin-top: 50px;
   tr {
     height: 54px;
   }
@@ -74,9 +70,18 @@
     border: none;
     padding: 0;
   }
+  &.header__nav--tablet {
+    display: none;
+  }
+  @include respond-to-larger-than-tablet {
+    display: none;
+    &.header__nav--tablet {
+      display: table;
+    }
+  }
 }
 
 .header__nav-link {
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: white;
 }

@@ -1,3 +1,9 @@
+@mixin respond-to-larger-than-800px {
+  @media (min-width: 800px) {
+    @content;
+  }
+}
+
 @mixin nav-positioner {
   position: absolute;
   z-index: map-get($z-indexes, 'nav__positioner');
@@ -13,7 +19,7 @@
   font-size: 1.8rem;
   color: white;
   text-decoration: none;
-  padding: 0 15px;
+  padding: 0 5px;
 }
 
 .nav {
@@ -25,7 +31,7 @@
 .nav__top {
   @include nav-positioner;
   height: 44px;
-  @include respond-to-larger-than-tablet {
+  @include respond-to-larger-than-800px {
     display: none;
   }
 }
@@ -38,7 +44,7 @@
   svg {
     fill: white;
   }
-  @include respond-to-larger-than-tablet {
+  @include respond-to-larger-than-800px {
     @include nav-link-base;
     float: none;
     vertical-align: middle;
@@ -56,7 +62,7 @@
     height: 60px;
     margin-top: (44px - 60px) / 2;
   }
-  @include respond-to-larger-than-tablet {
+  @include respond-to-larger-than-800px {
     float: left;
   }
 }
@@ -77,7 +83,7 @@
   overflow: hidden;
   background: black;
   transition: height 300ms;
-  @include respond-to-larger-than-tablet {
+  @include respond-to-larger-than-800px {
     display: none;
   }
 }
@@ -103,7 +109,7 @@
 .nav__desktop {
   display: none;
   @include nav-positioner;
-  @include respond-to-larger-than-tablet {
+  @include respond-to-larger-than-800px {
     display: block;
   }
 }
