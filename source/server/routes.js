@@ -1,12 +1,7 @@
 import config from 'config';
-import { fromCallback } from 'bluebird';
-import mailgun from 'mailgun-js';
 import createRouter from 'koa-router';
 import getLocals from './locals';
-
-const contactFormReceive = config.get('mail.contactFormReceive');
-
-const mailer = mailgun(config.get('mailgun'));
+import submitForm from './routes/submit-form';
 
 const rootRouter = createRouter();
 
@@ -14,22 +9,11 @@ rootRouter.get('/', function *(next) {
   yield this.render('index', {});
 });
 
-rootRouter.post('/submit-form', function *() {
-  const body = this.request.body;
+rootRouter.post('/submit-form', submitForm);
 
-  const data = {
-    from: body.email,
-    to: contactFormReceive,
-    subject: `Contact Form Submit (from ${body.email})`,
-    text: body.message,
-  };
-
-  yield fromCallback((done) => {
-    mailer.messages().send(data, done);
-  });
-
-  this.redirect('back');
-});
+function *contactHandler() {
+  yield this.render('contact', {});
+}
 
 // Chinese
 // ----------------------
@@ -40,9 +24,7 @@ cnRouter.get('/', function *(next) {
   yield this.render('home', {});
 });
 
-cnRouter.get('/contact', function *(next) {
-  yield this.render('contact', {});
-});
+cnRouter.get('/contact', contactHandler);
 
 cnRouter.get('/:page', function *(next) {
   const locals = yield getLocals(this.params.page);
@@ -61,8 +43,10 @@ enRouter.get('/', function *(next) {
 });
 
 enRouter.get('/content', function *(next) {
-  yield this.render('content', {});
+  yield this.render('contact', {});
 });
+
+enRouter.get('/contact', contactHandler);
 
 rootRouter.use('/en', enRouter.routes());
 
