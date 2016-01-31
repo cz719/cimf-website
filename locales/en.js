@@ -6,5 +6,8 @@
 	"Message": "Message",
 	"message...": "message...",
 	"Submit": "Submit",
-	"Contact Us": "Contact Us"
+	"Contact Us": "Contact Us",
+	"Name cannot be empty": "Name cannot be empty",
+	"Email must be a valid email address": "Email must be a valid email address",
+	"Message cannot be empty": "Message cannot be empty"
 }

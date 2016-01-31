@@ -6,5 +6,8 @@
 	"Message": "留言信息",
 	"message...": "内容……",
 	"Submit": "提交",
-	"Contact Us": "联系我们"
+	"Contact Us": "联系我们",
+	"Name cannot be empty": "请输入名字",
+	"Email must be a valid email address": "请输入格式正确的邮箱地址",
+	"Message cannot be empty": "请输入信息内容"
 }

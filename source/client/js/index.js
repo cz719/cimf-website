@@ -1,31 +1,85 @@
-'use strict';
+import validate from 'validate.js';
+import { collect } from './form';
 
-(function (window, document) {
+// Module slide down menu
+// ----------------------
 
-  var getStyle = window.getComputedStyle;
+var getStyle = window.getComputedStyle;
 
-  function pxToNumber(str) {
-    return parseInt(str.slice(0, -2));
+function pxToNumber(str) {
+  return parseInt(str.slice(0, -2));
+}
+
+var isDropdownOpen = false;
+
+function showDropdownClickHandler(event) {
+  event.preventDefault();
+
+  if (!isDropdownOpen) {
+    isDropdownOpen = true;
+    var dropdown = document.getElementById('js-dropdown');
+    var computedStyle = getStyle(dropdown);
+    var height = pxToNumber(computedStyle['height']);
+    document.getElementById('js-dropdown-mask').style.height = height + 'px';
+  } else {
+    isDropdownOpen = false;
+    document.getElementById('js-dropdown-mask').style.height = '';
   }
+}
 
-  var isDropdownOpen = false;
+document.getElementById('js-show-dropdown')
+  .addEventListener('click', showDropdownClickHandler, false);
 
-  function showDropdownClickHandler(event) {
-    event.preventDefault();
+// Concact form validation
+// -----------------------
 
-    if (!isDropdownOpen) {
-      isDropdownOpen = true;
-      var dropdown = document.getElementById('js-dropdown');
-      var computedStyle = getStyle(dropdown);
-      var height = pxToNumber(computedStyle['height']);
-      document.getElementById('js-dropdown-mask').style.height = height + 'px';
-    } else {
-      isDropdownOpen = false;
-      document.getElementById('js-dropdown-mask').style.height = '';
+const form = document.getElementById('contact-form');
+
+const errorLabels = Array.prototype.slice.call(document.getElementsByClassName('form__error-label'), 0);
+
+function showLabel(id) {
+  for (const label of errorLabels) {
+    if (label.htmlFor === id) {
+      label.style.display = 'block';
     }
   }
+}
 
-  document.getElementById('js-show-dropdown')
-    .addEventListener('click', showDropdownClickHandler, false);
+if (form) {
+  form.addEventListener('submit', function (event) {
+    const data = collect(event.target);
+    const msg = validate(data, {
+      name: {
+        presence: true,
+      },
+      email: {
+        presence: true,
+        email: true,
+      },
+      message: {
+        presence: true,
+      },
+    });
 
-})(window, document);
+    // Reset error message
+    for (const label of errorLabels) {
+      label.style.display = '';
+    }
+
+    if (msg != null) {
+      event.preventDefault();
+
+      if (msg.name) {
+        showLabel('name');
+      }
+
+      if (msg.email) {
+        showLabel('email');
+      }
+
+      if (msg.message) {
+        showLabel('message');
+      }
+    }
+  }, false);
+}
