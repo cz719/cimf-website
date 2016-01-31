@@ -9,5 +9,12 @@
 	"Contact Us": "Contact Us",
 	"Name cannot be empty": "Name cannot be empty",
 	"Email must be a valid email address": "Email must be a valid email address",
-	"Message cannot be empty": "Message cannot be empty"
+	"Message cannot be empty": "Message cannot be empty",
+	"Faculty": "Faculty",
+	"Activity": "Activity",
+	"Competition": "Competition",
+	"Apply": "Apply",
+	"CIM": "CIM",
+	"Regulation": "Regulation",
+	"Contact": "Contact"
 }

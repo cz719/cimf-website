@@ -9,5 +9,12 @@
 	"Contact Us": "联系我们",
 	"Name cannot be empty": "请输入名字",
 	"Email must be a valid email address": "请输入格式正确的邮箱地址",
-	"Message cannot be empty": "请输入信息内容"
+	"Message cannot be empty": "请输入信息内容",
+	"Faculty": "师资介绍",
+	"Activity": "活动安排",
+	"Competition": "比赛章程",
+	"Apply": "报名申请",
+	"CIM": "场地介绍",
+	"Regulation": "学生守则",
+	"Contact": "联系我们"
 }
