@@ -1,23 +1,24 @@
 <nav class="nav">
   <div class="nav__top">
-    <a href="/cn" class="nav__home"><% include ./svg/home.svg %></a>
+    <a href="/<%= basePath %>" class="nav__home"><% include ./svg/home.svg %></a>
     <button id="js-show-dropdown" class="nav__hamburger"><% include ./svg/hamburger.svg %></button>
-    <a href="/cn" class="nav__logo"><% include ./svg/logo-black.svg %></a>
+    <a href="/<%= basePath %>" class="nav__logo"><% include ./svg/logo-black.svg %></a>
   </div>
   <div class="nav__dropdown-mask" id="js-dropdown-mask">
     <ul class="nav__dropdown" id="js-dropdown">
-      <li class="nav__dropdown-item"><a href="#">联系</a></li>
-      <li class="nav__dropdown-item"><a href="#">发现</a></li>
-      <li class="nav__dropdown-item"><a href="#">Switch to English</a></li>
+      <% for (var i = 0; i < navigations.length; i++) { %>
+        <li class="nav__dropdown-item"><a href="<%= navigations[i].href %>"><%= navigations[i].text %></a></li>
+      <% } %>
     </ul>
   </div>
   <div class="nav__desktop">
     <div class="nav__desktop-inner">
-      <a href="/cn" class="nav__logo"><% include ./svg/logo-black.svg %></a>
+      <a href="/<%= basePath %>" class="nav__logo"><% include ./svg/logo-black.svg %></a>
       <div class="nav__nav-group">
-        <a href="/cn" class="nav__home"><% include ./svg/home.svg %></a>
-        <a href="/cn/discover" class="nav__link">发现</a>
-        <a href="/cn/contact" class="nav__link">联系</a>
+        <a href="/<%= basePath %>" class="nav__home"><% include ./svg/home.svg %></a>
+        <% for (var i = 0; i < navigations.length; i++) { %>
+          <a href="<%= navigations[i].href %>" class="nav__link"><%= navigations[i].text %></a>
+        <% } %>
       </div>
     </div>
   </div>
