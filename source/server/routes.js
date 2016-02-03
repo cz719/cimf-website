@@ -27,9 +27,18 @@ contentRouter.get('/contact', function *() {
 contentRouter.get('/:page', function *(next) {
   const locals = yield getLocals(`${this.basePath}/${this.params.page}.md`);
 
-  locals.article = locals.article.replace(
-    /(<img) src="(\/img\/.+?)\.(\w+?)"/g,
-    `$1 srcset="${this.CDN}$2-200-@1x.$3 1x,${this.CDN}$2-200-@2x.$3 2x"`);
+  switch (this.params.page) {
+  case 'faculty':
+    locals.article = locals.article.replace(
+      /(<img) src="(\/img\/.+?)\.(\w+?)"/g,
+      `$1 srcset="${this.CDN}$2-200-@1x.$3 1x,${this.CDN}$2-200-@2x.$3 2x"`);
+    break;
+  case 'cim':
+    locals.article = locals.article.replace(
+      /(<img) src="(\/img\/.+?)\.(\w+?)"/g,
+      `$1 srcset="${this.CDN}$2@1x.$3 1x,${this.CDN}$2@2x.$3 2x"`);
+    break;
+  }
 
   locals.page_name = `article__${this.params.page}`;
 

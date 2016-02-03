@@ -53,6 +53,28 @@ gulp.task('default', () => {
       path.basename += '-300-@2x';
     }));
 
-  return es.merge(x1_200, x2_200, x1_300, x2_300)
-    .pipe(gulp.dest('public/img'));
+  const cim_img = gulp.src('source/client/img/cim-img/**/*.{png,jpg,jpeg}');
+
+  const cim_x1_600 = cim_img.pipe(clone())
+    .pipe(imageResize({
+      width: 600,
+      // upscale: true,
+    }))
+    .pipe(rename((path) => {
+      path.basename += '@1x';
+    }));
+
+  const cim_x2_600 = cim_img.pipe(clone())
+    .pipe(imageResize({
+      width: 1200,
+      // upscale: true,
+    }))
+    .pipe(rename((path) => {
+      path.basename += '@2x';
+    }));
+
+  return es.merge(
+    es.merge(x1_200, x2_200, x1_300, x2_300).pipe(gulp.dest('public/img')),
+    es.merge(cim_x1_600, cim_x2_600).pipe(gulp.dest('public/img/cim-img'))
+  );
 });

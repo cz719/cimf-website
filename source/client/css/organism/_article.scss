@@ -24,4 +24,11 @@
       text-align: center;
     }
   }
+
+  &.article__cim {
+    img {
+      display: block;
+      margin: 10px auto;
+    }
+  }
 }
