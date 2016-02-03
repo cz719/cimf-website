@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../source/server/config.js"],"names":[],"mappings":";;;;;;;;AAEA,OAAO,OAAP","file":"config.js","sourcesContent":["import Bluebird from 'bluebird';\n\nglobal.Promise = Bluebird;\n"]}
