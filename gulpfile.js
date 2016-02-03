@@ -75,6 +75,7 @@ gulp.task('default', () => {
 
   return es.merge(
     es.merge(x1_200, x2_200, x1_300, x2_300).pipe(gulp.dest('public/img')),
-    es.merge(cim_x1_600, cim_x2_600).pipe(gulp.dest('public/img/cim-img'))
+    es.merge(cim_x1_600, cim_x2_600).pipe(gulp.dest('public/img/cim-img')),
+    gulp.src('source/client/img/misc/**/*.{png,jpg,jpeg}').pipe(gulp.dest('public/img/misc'))
   );
 });

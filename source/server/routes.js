@@ -21,7 +21,8 @@ contentRouter.get('/', function *(next) {
 });
 
 contentRouter.get('/contact', function *() {
-  yield this.render('contact', {});
+  const locals = yield getLocals(`${this.basePath}/contact.md`);
+  yield this.render('contact', locals);
 });
 
 contentRouter.get('/:page', function *(next) {
