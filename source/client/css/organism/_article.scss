@@ -16,4 +16,10 @@
       width: 50%;
     }
   }
+
+  &.article__faculty-detail {
+    p:first-child, h2 {
+      text-align: center;
+    }
+  }
 }
