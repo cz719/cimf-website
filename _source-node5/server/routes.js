@@ -46,7 +46,7 @@ contentRouter.get('/contact', function* () {
 contentRouter.get('/:page', function* (next) {
   const locals = yield (0, _locals2.default)(`${ this.basePath }/${ this.params.page }.md`);
 
-  locals.article = locals.article.replace(/(<img) src="(\/img\/.+?)\.(\w+?)(")/g, `$1 srcset="${ this.CDN }$2-200-@1x.$3 1x,${ this.CDN }$2-200-@2x.$3 2x"$4`);
+  locals.article = locals.article.replace(/(<img) src="(\/img\/.+?)\.(\w+?)"/g, `$1 srcset="${ this.CDN }$2-200-@1x.$3 1x,${ this.CDN }$2-200-@2x.$3 2x"`);
 
   locals.page_name = `article__${ this.params.page }`;
 
@@ -56,7 +56,7 @@ contentRouter.get('/:page', function* (next) {
 contentRouter.get('/faculty/:name', function* (next) {
   const locals = yield (0, _locals2.default)(`${ this.basePath }/faculty/${ this.params.name }.md`);
 
-  locals.article = locals.article.replace(/(<img) src="(\/img\/.+?)\.(\w+?)(")/g, `$1 srcset="${ this.CDN }$2-300-@1x.$3 1x,${ this.CDN }$2-300-@2x.$3 2x"$4`);
+  locals.article = locals.article.replace(/(<img) src="(\/img\/.+?)\.(\w+?)(")/g, `$1 srcset="${ this.CDN }$2-300-@1x.$3 1x,${ this.CDN }$2-300-@2x.$3 2x"`);
 
   locals.page_name = 'article__faculty-detail';
 
