@@ -3,6 +3,13 @@
   margin-top: 20px;
   margin-bottom: 50px;
 
+  &.article__home {
+    img[srcset] {
+      display: block;
+      margin: 10px auto;
+    }
+  }
+
   &.article__faculty {
     text-align: center;
     ul {

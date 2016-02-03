@@ -17,6 +17,11 @@ const contentRouter = createRouter();
 
 contentRouter.get('/', function *(next) {
   const locals = yield getLocals('cn/home.md');
+
+  locals.article = locals.article.replace(
+    /(<img) src="(\/img\/cim-img\/.+?)\.(\w+?)"/g,
+    `$1 srcset="${this.CDN}$2@1x.$3 1x,${this.CDN}$2@2x.$3 2x"`);
+
   yield this.render('home', locals);
 });
 
