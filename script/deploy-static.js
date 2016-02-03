@@ -29,16 +29,17 @@ Bluebird.promisifyAll(Object.getPrototypeOf(s3));
 co(function *() {
   const files = yield globAsync(path.resolve(__dirname, '../public/**/*.*'));
 
-  for (const fpath of files) {
-    const buf = yield fs.readFile(fpath);
-    const key = fpath.replace(path.resolve(__dirname, '../public'), '').slice(1);
-    console.log(`Uploading to ${key}`);
-    yield s3.uploadAsync({
-      ACL: 'public-read',
-      Bucket: BUCKET,
-      ContentType: mime.lookup(fpath),
-      Body: buf,
-      Key: key,
+  yield Bluebird.resolve(files).map(fpath => {
+    return fs.readFile(fpath).then(buf => {
+      const key = fpath.replace(path.resolve(__dirname, '../public'), '').slice(1);
+      console.log(`Uploading to ${key}`);
+      return s3.uploadAsync({
+        ACL: 'public-read',
+        Bucket: BUCKET,
+        ContentType: mime.lookup(fpath),
+        Body: buf,
+        Key: key,
+      });
     });
-  }
+  }, {concurrency: 5});
 });
