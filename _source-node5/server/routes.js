@@ -36,17 +36,28 @@ const contentRouter = (0, _koaRouter2.default)();
 
 contentRouter.get('/', function* (next) {
   const locals = yield (0, _locals2.default)('cn/home.md');
+
+  locals.article = locals.article.replace(/(<img) src="(\/img\/cim-img\/.+?)\.(\w+?)"/g, `$1 srcset="${ this.CDN }$2@1x.$3 1x,${ this.CDN }$2@2x.$3 2x"`);
+
   yield this.render('home', locals);
 });
 
 contentRouter.get('/contact', function* () {
-  yield this.render('contact', {});
+  const locals = yield (0, _locals2.default)(`${ this.basePath }/contact.md`);
+  yield this.render('contact', locals);
 });
 
 contentRouter.get('/:page', function* (next) {
   const locals = yield (0, _locals2.default)(`${ this.basePath }/${ this.params.page }.md`);
 
-  locals.article = locals.article.replace(/(<img) src="(\/img\/.+?)\.(\w+?)"/g, `$1 srcset="${ this.CDN }$2-200-@1x.$3 1x,${ this.CDN }$2-200-@2x.$3 2x"`);
+  switch (this.params.page) {
+    case 'faculty':
+      locals.article = locals.article.replace(/(<img) src="(\/img\/.+?)\.(\w+?)"/g, `$1 srcset="${ this.CDN }$2-200-@1x.$3 1x,${ this.CDN }$2-200-@2x.$3 2x"`);
+      break;
+    case 'cim':
+      locals.article = locals.article.replace(/(<img) src="(\/img\/.+?)\.(\w+?)"/g, `$1 srcset="${ this.CDN }$2@1x.$3 1x,${ this.CDN }$2@2x.$3 2x"`);
+      break;
+  }
 
   locals.page_name = `article__${ this.params.page }`;
 
