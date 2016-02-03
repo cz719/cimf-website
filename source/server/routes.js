@@ -26,11 +26,25 @@ contentRouter.get('/contact', function *() {
 
 contentRouter.get('/:page', function *(next) {
   const locals = yield getLocals(`${this.basePath}/${this.params.page}.md`);
+
+  locals.article = locals.article.replace(
+    /(<img) src="(\/img\/.+?)\.(\w+?)(")/g,
+    '$1 srcset="$2-200-@1x.$3 1x,$2-200-@2x.$3 2x"$4');
+
+  locals.page_name = `article__${this.params.page}`;
+
   yield this.render('content', locals);
 });
 
 contentRouter.get('/faculty/:name', function *(next) {
   const locals = yield getLocals(`${this.basePath}/faculty/${this.params.name}.md`);
+
+  locals.article = locals.article.replace(
+    /(<img) src="(\/img\/.+?)\.(\w+?)(")/g,
+    '$1 srcset="$2-300-@1x.$3 1x,$2-300-@2x.$3 2x"$4');
+
+  locals.page_name = 'article__faculty-detail';
+
   yield this.render('content', locals);
 });
 

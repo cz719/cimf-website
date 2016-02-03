@@ -12,7 +12,9 @@ gulp.task('default', () => {
   const x1_200 = imgs.pipe(clone())
     .pipe(imageResize({
       width: 200,
-      upscale: false,
+      height: 300,
+      upscale: true,
+      crop: true,
     }))
     .pipe(rename((path) => {
       path.basename += '-200-@1x';
@@ -21,7 +23,9 @@ gulp.task('default', () => {
   const x2_200 = imgs.pipe(clone())
     .pipe(imageResize({
       width: 400,
-      upscale: false,
+      height: 600,
+      upscale: true,
+      crop: true,
     }))
     .pipe(rename((path) => {
       path.basename += '-200-@2x';
@@ -30,7 +34,9 @@ gulp.task('default', () => {
   const x1_300 = imgs.pipe(clone())
     .pipe(imageResize({
       width: 300,
-      upscale: false,
+      height: 450,
+      upscale: true,
+      crop: true,
     }))
     .pipe(rename((path) => {
       path.basename += '-300-@1x';
@@ -39,7 +45,9 @@ gulp.task('default', () => {
   const x2_300 = imgs.pipe(clone())
     .pipe(imageResize({
       width: 600,
-      upscale: false,
+      height: 900,
+      upscale: true,
+      crop: true,
     }))
     .pipe(rename((path) => {
       path.basename += '-300-@2x';
