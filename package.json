@@ -54,7 +54,7 @@
     "build:css": "node-sass --output-style expanded -o public source/client/css/style.scss",
     "build:js": "webpack",
     "build:img": "gulp",
-    "build:server": "babel source -d _source-node5 --presets es2015-node5 -s",
+    "build:server": "babel source/server -d _source-node5/server --presets es2015-node5 -s",
     "build": "npm run reset && npm run build:css && npm run build:js && npm run build:img && npm run build:server",
     "predev": "npm run reset && npm run build:css && npm run build:img",
     "dev": "npm run build:css -- -w & npm run build:js -- -w & npm run build:server -- -w & nodemon -w _source-node5 -C _source-node5/server/index.js & browser-sync start --config bs-config.js",
