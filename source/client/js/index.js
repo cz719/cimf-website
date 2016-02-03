@@ -1,3 +1,4 @@
+import 'picturefill';
 import validate from 'validate.js';
 import { collect } from './form';
 

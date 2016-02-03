@@ -1,6 +1,7 @@
 import 'source-map-support/register';
 import './config';
 import { join } from 'path';
+import config from 'config';
 import koa from 'koa';
 import koaViews from 'koa-views';
 import koaStatic from 'koa-static';
@@ -9,6 +10,8 @@ import koai18n from 'koa-i18n';
 import koaBodyparser from 'koa-bodyparser';
 import routes from './routes';
 
+const CDN = config.get('CDN');
+
 const app = koa();
 
 koaLocale(app);
@@ -16,6 +19,7 @@ koaLocale(app);
 // Provide convenience for links in template
 app.use(function *(next) {
   this.basePath = /\/cn/i.test(this.url) ? 'cn' : 'en';
+  this.CDN = CDN;
   yield next;
 });
 
@@ -53,6 +57,7 @@ app.use(function *(next) {
     i18n: this.i18n,
     basePath: this.basePath,
     navigations,
+    CDN,
   };
 
   yield next;

@@ -15,6 +15,6 @@
 	"Competition": "比赛章程",
 	"Apply": "报名申请",
 	"CIM": "场地介绍",
-	"Regulation": "学生守则",
+	"Regulation": "规章条例",
 	"Contact": "联系我们"
 }

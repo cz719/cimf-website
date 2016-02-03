@@ -6,11 +6,11 @@ import remarkHtml from 'remark-html';
 import remarkYaml from 'remark-yaml';
 import { safeLoad } from 'js-yaml';
 
-const processor = remark().use(remarkYaml).use(remarkHtml);
+const processor = remark().use(remarkYaml).use(remarkHtml, {entities: 'escape'});
 const parser = remark().use(remarkYaml);
 
-export default wrap(function *(fname) {
-  const md = yield readFile(join(__dirname, '../../content', `${fname}.md`), 'utf8');
+export default wrap(function *(fpath) {
+  const md = yield readFile(join(__dirname, '../../content', fpath), 'utf8');
   const article = processor.process(md, {gfm: true});
   const config = safeLoad(parser.parse(md).children[0].value);
   return { config, article };
