@@ -12,8 +12,10 @@
       margin: 0;
     }
     li {
-      float: left;
-      width: 50%;
+      @include respond-to-larger-than-tablet {
+        float: left;
+        width: 50%;
+      }
     }
   }
 
