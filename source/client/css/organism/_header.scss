@@ -7,12 +7,7 @@
   }
   &.header--home,
   &.header--welcome {
-    min-height: 460px;
-    height: 90vh;
     overflow: hidden;
-    @include respond-to-larger-than-tablet {
-      height: 500px;
-    }
   }
   &.header--welcome {
     height: 100vh;
@@ -29,8 +24,6 @@
   background-size: cover;
   .header--home &,
   .header--welcome & {
-    background: url(http://static.cimfusa.com/img/home-bg.jpg) center center no-repeat;
-    background-size: cover;
   }
 }
 

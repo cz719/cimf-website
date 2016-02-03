@@ -1,42 +1,12 @@
 <% include ./_head.ejs %>
+<% include ./_navbar.ejs %>
 
 <header class="header header--home">
   <div class="header__bg"></div>
   <div class="header__content">
     <div class="container">
-      <h1 class="header__title">克利夫兰国际音乐节</h1>
-      <h1 class="header__title">July 26th - August 6th 2016</h1>
+      <h1 class="header__title"><%= i18n.__('Cleveland International Music Festival') %></h1>
     </div>
-    <table class="header__nav">
-      <% for (var i = 0; i < Math.ceil(navigations.length / 2) * 2; i++) { %>
-        <% if (i % 2 === 0) { %>
-          <tr>
-        <% } %>
-            <td>
-              <% if (i < navigations.length ) { %>
-                <a href="<%= navigations[i].href %>" class="header__nav-link"><%= navigations[i].text %></a>
-              <% } %>
-            </td>
-        <% if (i % 2 === 1) { %>
-          </tr>
-        <% } %>
-      <% } %>
-    </table>
-    <table class="header__nav header__nav--tablet">
-      <% for (var i = 0; i < Math.ceil(navigations.length / 4) * 4; i++) { %>
-        <% if (i % 4 === 0) { %>
-          <tr>
-        <% } %>
-            <td>
-              <% if (i < navigations.length ) { %>
-                <a href="<%= navigations[i].href %>" class="header__nav-link"><%= navigations[i].text %></a>
-              <% } %>
-            </td>
-        <% if (i % 4 === 3) { %>
-          </tr>
-        <% } %>
-      <% } %>
-    </table>
   </div>
 </header>
 
