@@ -13,11 +13,11 @@
 ![CIM Front Entrance](/img/cim-img/cim-front-entrance.jpg)
 
 **克利夫兰国际音乐节主办方：**
-- 慕萨国际文化传播[Mousa Logo](/img/cim-img/mousa-logo.jpg)
+- 慕萨国际文化传播 ![Mousa Logo](/img/logo/mousa-logo.jpg)
 
 **克利夫兰国际音乐节协办方：**
-- 克利夫兰音乐学院[CIM Logo](/img/cim-img/cim-logo.jpg)
-- 凯斯西储大学[Case logo](/img/cim-img/case-logo.jpg)
+- 克利夫兰音乐学院 ![CIM Logo](/img/logo/cim-logo.jpg)
+- 凯斯西储大学 ![Case logo](/img/logo/case-logo.jpg)
 
 **克利夫兰国际音乐节艺术顾问：** Kathryn Brown，HaeSun Paik，Dean Southern
 

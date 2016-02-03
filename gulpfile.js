@@ -67,15 +67,21 @@ gulp.task('default', () => {
   const cim_x2_600 = cim_img.pipe(clone())
     .pipe(imageResize({
       width: 1200,
-      // upscale: true,
     }))
     .pipe(rename((path) => {
       path.basename += '@2x';
     }));
 
+  const logo = gulp.src('source/client/img/logo/**/*.{png,jpg,jpeg}')
+    .pipe(imageResize({
+      height: 50,
+    }))
+    .pipe(gulp.dest('public/img/logo'));
+
   return es.merge(
     es.merge(x1_200, x2_200, x1_300, x2_300).pipe(gulp.dest('public/img')),
     es.merge(cim_x1_600, cim_x2_600).pipe(gulp.dest('public/img/cim-img')),
-    gulp.src('source/client/img/misc/**/*.{png,jpg,jpeg}').pipe(gulp.dest('public/img/misc'))
+    gulp.src('source/client/img/misc/**/*.{png,jpg,jpeg}').pipe(gulp.dest('public/img/misc')),
+    logo
   );
 });
