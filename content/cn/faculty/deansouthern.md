@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Dean Southern](/img/Dean-Southern.jpg)
+![Dean Southern](/img/dean-southern.jpg)
 
 ## 迪安·萨瑟恩 Dean Southern
 

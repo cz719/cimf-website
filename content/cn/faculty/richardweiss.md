@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Richard Weiss](/img/Richard-Weiss.jpg)
+![Richard Weiss](/img/richard-weiss.jpg)
 
 ## 查德·魏斯 Richard Weiss
 

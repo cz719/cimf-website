@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Fanhong Meng](/img/Fanhong-Meng.jpg)
+![Fanhong Meng](/img/fanhong-meng.jpg)
 
 ## 孟凡虹 Fanhong Meng
 

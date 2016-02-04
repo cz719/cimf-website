@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Yunlin Yang](/img/Yunlin-Yang.jpg)
+![Yunlin Yang](/img/yunlin-yang.jpg)
 
 ## 杨韵琳 Yunlin Yang
 

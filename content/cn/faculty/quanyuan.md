@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Quan Yuan](/img/Quan-Yuan/png)
+![Quan Yuan](/img/quan-yuan.png)
 
 ## 袁泉 Quan Yuan
 

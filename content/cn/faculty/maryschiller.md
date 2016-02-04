@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Mary Schiller](/img/Mary-Schiller.png)
+![Mary Schiller](/img/mary-schiller.png)
 
 ## 玛丽·席勒 Mary Schiller
 

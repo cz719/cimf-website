@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Ying Wu](/img/Ying-Wu.jpg)
+![Ying Wu](/img/ying-wu.jpg)
 
 ## 吴迎 Ying Wu
 

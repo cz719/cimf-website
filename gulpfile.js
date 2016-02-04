@@ -5,9 +5,10 @@ const imageResize = require('gulp-image-resize');
 const rename = require('gulp-rename');
 const clone = require('gulp-clone');
 const es = require('event-stream');
+const print = require('gulp-print');
 
 gulp.task('default', () => {
-  const imgs = gulp.src('source/client/img/profile_img/**/*.{png,jpg,jpeg}');
+  const imgs = gulp.src('source/client/img/profile-img/**/*.{png,jpg,jpeg}');
 
   const x1_200 = imgs.pipe(clone())
     .pipe(imageResize({
@@ -83,5 +84,5 @@ gulp.task('default', () => {
     es.merge(cim_x1_600, cim_x2_600).pipe(gulp.dest('public/img/cim-img')),
     gulp.src('source/client/img/misc/**/*.{png,jpg,jpeg}').pipe(gulp.dest('public/img/misc')),
     logo
-  );
+  ).pipe(print());
 });

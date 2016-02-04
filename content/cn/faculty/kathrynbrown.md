@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![kathryn brown](/img/Kathryn-Brown.png)
+![kathryn brown](/img/kathryn-brown.png)
 
 ## 凯瑟琳·布朗 Kathryn Brown
 

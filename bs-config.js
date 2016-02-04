@@ -14,4 +14,5 @@ module.exports = {
   ghostMode: false,
   notify: false,
   reloadDelay: 1000,
+  open: false,
 };
