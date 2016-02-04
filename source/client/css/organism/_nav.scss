@@ -53,17 +53,16 @@
 
 .nav__logo {
   display: block;
-  width: 100px;
-  height: 100%;
   margin: 0 auto;
-  overflow: hidden;
-  svg {
-    width: 100px;
-    height: 60px;
-    margin-top: (44px - 60px) / 2;
-  }
+  width: 93px;
+  height: 44px;
+  padding: 10px;
   @include respond-to-larger-than-800px {
     float: left;
+    width: auto;
+    padding-top: 13px;
+    padding-left: 20px;
+    height: 27px + 10px * 2 + 3px;
   }
 }
 
