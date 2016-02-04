@@ -41,6 +41,13 @@
   }
 }
 
+.header__logo {
+  max-width: 200px;
+  @include respond-to-larger-than-tablet {
+    max-width: 307px;
+  }
+}
+
 .header__title {
   .header--home &,
   .header--welcome & {
