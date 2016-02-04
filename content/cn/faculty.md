@@ -43,7 +43,7 @@ page_title: 师资介绍
 - ![Zhijiong Wang](/img/zhijiong-wang.jpg)
     ##### [王之炅 Zhijiong Wang](/cn/faculty/zhijiongwang)
 
-- ![Quan Yuan](/img/quan-yuan/png)
+- ![Quan Yuan](/img/quan-yuan.png)
     ##### [袁泉 Quan Yuan](/cn/faculty/quanyuan)
 
 - ![Stephen Geber](/img/stephen-geber.png)
