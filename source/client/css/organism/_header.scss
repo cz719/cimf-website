@@ -36,7 +36,7 @@
   .header--home &,
   .header--welcome & {
     position: relative;
-    margin-top: 100px;
+    margin-top: 125px;
     text-align: center;
   }
 }
@@ -46,6 +46,7 @@
   .header--welcome & {
     font-size: 2.6rem;
     @include respond-to-larger-than-tablet {
+      margin-top: 20px;
       font-size: 5.0rem;
     }
   }

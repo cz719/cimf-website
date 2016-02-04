@@ -26,6 +26,11 @@
   position: relative;
   z-index: map-get($z-indexes, 'nav');
   color: white;
+  &.nav__page-home {
+    .nav__logo {
+      display: none;
+    }
+  }
 }
 
 .nav__top {

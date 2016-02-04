@@ -26,11 +26,14 @@ contentRouter.get('/', function *(next) {
     /(<img) src="(\/img\/logo\/.+?)\.(\w+?)"/g,
     `$1 src="${this.CDN}$2.$3"`);
 
+  locals.page_name = 'home';
+
   yield this.render('home', locals);
 });
 
 contentRouter.get('/contact', function *() {
   const locals = yield getLocals(`${this.basePath}/contact.md`);
+  locals.page_name = 'contact';
   yield this.render('contact', locals);
 });
 
