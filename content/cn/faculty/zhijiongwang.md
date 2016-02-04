@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Zhijiong Wang](/img/Zhijiong-Wang.jpg)
+![Zhijiong Wang](/img/zhijiong-wang.jpg)
 
 ## 王之炅 Zhijiong Wang
 

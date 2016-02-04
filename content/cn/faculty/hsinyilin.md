@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Hsin Yi Lin](/img/Hsin-Yi-Lin.png)
+![Hsin Yi Lin](/img/hsin-yi-lin.png)
 
 ## 林欣谊 Hsin Yi Lin
 

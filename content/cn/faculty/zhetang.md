@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Zhe Tang](/img/Zhe-Tang.jpg)
+![Zhe Tang](/img/zhe-tang.jpg)
 
 ## 唐哲 Zhe Tang
 

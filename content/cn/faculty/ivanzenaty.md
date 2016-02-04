@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Ivan Zenaty](/img/Ivan-Zenaty.jpg)
+![Ivan Zenaty](/img/ivan-zenaty.jpg)
 
 ## 伊万·泽纳蒂 Ivan Zenaty
 

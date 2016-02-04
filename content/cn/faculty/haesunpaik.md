@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![HaeSun Paik](/img/HaeSun-Paik.png)
+![HaeSun Paik](/img/haesun-paik.png)
 
 ## 白惠善 HaeSun Paik
 

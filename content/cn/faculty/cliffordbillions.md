@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Clifford Billions](/img/Clifford-Billions.png)
+![Clifford Billions](/img/clifford-billions.png)
 
 ## 克利福德·比林斯 Clifford Billions
 

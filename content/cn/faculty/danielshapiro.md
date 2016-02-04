@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Daniel Shapiro](/img/Daniel-Shapiro.jpg)
+![Daniel Shapiro](/img/daniel-shapiro.jpg)
 
 ## 丹尼尔·夏皮洛 Daniel Shapiro
 

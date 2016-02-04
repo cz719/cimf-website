@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Peter Otto](/img/Peter-Otto.jpg)
+![Peter Otto](/img/peter-otto.jpg)
 
 ## 彼得·奥托  Peter Otto
 

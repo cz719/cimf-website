@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Stephen Geber](/img/Stephen-Geber.png)
+![Stephen Geber](/img/stephen-geber.png)
 
 ## 史蒂芬·盖博 Stephen Geber
 

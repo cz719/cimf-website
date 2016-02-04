@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Hekun Wu](/img/Hekun-Wu.jpg)
+![Hekun Wu](/img/hekun-wu.jpg)
 
 ## 吴和坤 Hekun Wu
 

@@ -2,7 +2,7 @@
 page_title: Faculty
 ---
 
-![Tianshu Wang](/img/Tianshu-Wang.jpg)
+![Tianshu Wang](/img/tianshu-wang.jpg)
 
 ## 王天舒 Tianshu Wang
 
