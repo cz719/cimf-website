@@ -21,7 +21,7 @@
 
 ##### **克利夫兰国际音乐节艺术顾问：** Kathryn Brown，HaeSun Paik，Dean Southern
 
-[**点击下载音乐节官方宣传手册**](/cimf-brochure-cn.pdf)
+[**点击下载音乐节官方宣传手册**](http://static.cimfusa.com/pdf/cimf-brochure-cn.pdf)
 
 **_关注官方微信平台：克利夫兰国际音乐节_**
 
