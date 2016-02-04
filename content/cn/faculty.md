@@ -6,6 +6,8 @@ page_title: 师资介绍
 
 ## **器乐**
 
+***
+
 #### **钢琴**
 
 - ![kathryn brown](/img/kathryn-brown.png)
@@ -32,6 +34,8 @@ page_title: 师资介绍
 - ![Yunlin Yang](/img/yunlin-yang.jpg)
     ##### [杨韵琳 Yunlin Yang](/cn/faculty/yunlinyang)
 
+***
+
 #### **弦乐**
 
 - ![Peter Otto](/img/peter-otto.jpg)
@@ -54,6 +58,8 @@ page_title: 师资介绍
 
 - ![Hekun Wu](/img/hekun-wu.jpg)
     ##### [吴和坤 Hekun Wu](/cn/faculty/hekunwu)
+
+***
 
 #### **声乐**
 
