@@ -5,7 +5,11 @@
   <div class="header__bg"></div>
   <div class="header__content">
     <div class="container">
-      <img src="/img/misc/festival-w307-h100.png" alt="Festival logo" width="307" />
+      <picture>
+        <source media="(min-width: 750px)" srcset="/img/misc/festival-w307-h100.png 2x">
+        <source srcset="/img/misc/festival-w200-h65.png 2x">
+        <img alt="Festival logo" />
+      </picture>
       <h1 class="header__title"><%= i18n.__('Cleveland International Music Festival') %></h1>
     </div>
   </div>
